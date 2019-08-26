@@ -1,5 +1,5 @@
 import moment from 'moment'
-import hsl from './hsl'
+import jkl from './jkl'
 
 const timeParseFormats = ['HH:mm', 'H:mm']
 const dateParseFormats = [
@@ -58,7 +58,7 @@ export const populateFromTo = async (args) => {
   if (!args.inputFrom || !args.inputTo) {
     return args
   }
-  const [from, to] = await Promise.all([hsl.getLocationByString(args.inputFrom), hsl.getLocationByString(args.inputTo)])
+  const [from, to] = await Promise.all([jkl.getLocationByString(args.inputFrom), jkl.getLocationByString(args.inputTo)])
 
   if (!from || !to) {
     const nullLocationInput = !from ? args.inputFrom : args.inputTo

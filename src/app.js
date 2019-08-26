@@ -1,6 +1,6 @@
 import { argvToArray, populateDateTime, argsToObject, validateInput, populateFromTo } from './parser'
 import { printHelp, printRoutes, printLocations } from './printer'
-import hsl from './hsl'
+import jkl from './jkl'
 
 export const main = async (argv) => {
   const args = argvToArray(argv)
@@ -16,8 +16,8 @@ export const main = async (argv) => {
 
   printLocations(args)
 
-  const routes = hsl.getQueryFromArgs(args)
-    |> hsl.getRoutesByQuery
+  const routes = jkl.getQueryFromArgs(args)
+    |> jkl.getRoutesByQuery
     |> await #
 
   printRoutes(routes)
